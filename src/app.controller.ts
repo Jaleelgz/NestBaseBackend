@@ -1,5 +1,6 @@
 import { Controller, Get, HttpStatus, Param } from '@nestjs/common';
 import { AppService } from './app.service';
+/* eslint-disable */
 
 @Controller()
 export class AppController {
@@ -10,8 +11,8 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Get('/jaleel')
-  getHellojaleel(): any {
-    return 'Hi,jaleel';
+  @Get('/:name')
+  getHellojaleel(@Param('name') Name: string): any {
+    return "Hi, "+Name;
   }
 }
